@@ -1,12 +1,18 @@
 import React from "react";
 
 const ProfileFunctionComponent = (props) =>{
-    return(
+    const name = props.name.split(" ")[0];
+    const date = props.registeredAt.toLocaleDateString("ru-RU", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+    return (
         <div>
             <p>
-                Привет, <b>{this.props.name}!</b>
+                Привет, <b>{name}!</b>
                 <br/>
-                Дата регистрации: {this.props.registeredAt}
+                Дата регистрации: {date}
             </p>
         </div>
     );
